@@ -104,3 +104,126 @@
       // deal initial cards
       dealerHand = [drawCard(), drawCard()];
       playerHand = [drawCard(), drawCard()];
+
+  // update scores
+  updateScores();
+
+  // display cards
+  displayCards();
+
+  // check for blackjack
+  if (dealerScore === 21 || playerScore === 21) {
+    endGame();
+    return;
+  }
+}
+
+function hit() {
+  // draw a card and add it to the player's hand
+  playerHand.push(drawCard());
+
+  // update scores
+  updateScores();
+
+  // display cards
+  displayCards();
+
+  // check for bust
+  if (playerScore > 21) {
+    endGame();
+  }
+}
+
+function stand() {
+  // dealer draws until they reach a score of 17 or higher
+  while (dealerScore < 17) {
+    dealerHand.push(drawCard());
+    updateScores();
+    displayCards();
+  }
+
+  endGame();
+}
+
+function drawCard() {
+  // remove a card from the deck and return it
+  return deck.pop();
+}
+
+function updateScores() {
+  // reset scores
+  dealerScore = 0;
+  playerScore = 0;
+
+  // calculate scores
+  for (let card of dealerHand) {
+    dealerScore += CARD_VALUES[card];
+  }
+  for (let card of playerHand) {
+    playerScore += CARD_VALUES[card];
+  }
+
+  // adjust for aces
+  if (dealerHand.includes('ACE') && dealerScore > 21) {
+    dealerScore -= 10;
+  }
+  if (playerHand.includes('ACE') && playerScore > 21) {
+    playerScore -= 10;
+  }
+
+  // update score display
+  document.getElementById('dealer-score').innerHTML = dealerScore;
+  document.getElementById('player-score').innerHTML = playerScore;
+}
+
+function displayCards() {
+  // display dealer's cards
+  let dealerCards = '';
+  for (let i = 0; i < dealerHand.length; i++) {
+    dealerCards += `<img src="cards/${dealerHand[i]}.png" alt="${dealerHand[i]}" />`;
+  }
+  document.getElementById('dealer-cards').innerHTML = dealerCards;
+
+  // display player's cards
+  let playerCards = '';
+  for (let i = 0; i < playerHand.length; i++) {
+    playerCards += `<img src="cards/${playerHand[i]}.png" alt="${playerHand[i]}" />`;
+  }
+  document.getElementById('player-cards').innerHTML = playerCards;
+}
+
+function endGame() {
+  // determine winner and adjust money
+  let winner;
+  if (playerScore > 21 || (dealerScore <= 21 && dealerScore > playerScore)) {
+    winner = 'dealer';
+    money -= bet;
+  } else if (dealerScore > 21 || playerScore > dealerScore) {
+    winner = 'player';
+    money += bet;
+  } else {
+    winner = 'tie';
+  }
+
+  // display winner and update money
+  let message = `Dealer: ${dealerScore}, Player: ${playerScore}. `;
+  if (winner === 'dealer') {
+    message += 'Dealer wins.';
+  } else if (winner === 'player') {
+    message += 'Player wins!';
+  } else {
+    message += 'It\'s a tie!';
+  }
+  alert(message);
+  updateMoney();
+
+  // check if game is over
+  if (money <= 0) {
+    alert('Game over! You\'re out of money.');
+    location.reload();
+  } else {
+    // reset bet and deal new hand
+    bet = 0;
+    updateBet();
+    deal();
+
