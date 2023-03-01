@@ -3,7 +3,7 @@
   <title>XRP Blackjack</title>
   <link rel="stylesheet" href="style.css">
  <script>
-    // define constants
+// define constants
 const CARD_VALUES = {
 'ACE': 11,
 '2': 2,
