@@ -105,6 +105,7 @@
       dealerHand = [drawCard(), drawCard()];
       playerHand = [drawCard(), drawCard()];
 
+<css>
   /* General styles */
 body {
   font-family: Arial, sans-serif;
