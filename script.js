@@ -116,30 +116,26 @@ function deal() {
   // enable/disable buttons
   document.getElementById('deal-button').disabled = true;
   document.getElementById('hit-button').disabled = false;
-  document.getElementById('stand-button').disabled = false;
+document.getElementById('stand-button').disabled = false;
 }
 
 function hit() {
-// deal a card to the player and update the score
+// deal another card to player
 playerHand.push(deck.pop());
 playerScore += CARD_VALUES[playerHand[playerHand.length - 1]];
 updatePlayerCards();
 
 // check if player busts
 if (playerScore > 21) {
-endRound(false, 'Player busts.');
+endRound(false, 'Bust!');
 }
 }
 
 function stand() {
-// disable hit and stand buttons
-document.getElementById('hit-button').disabled = true;
-document.getElementById('stand-button').disabled = true;
-
-// reveal the dealer's facedown card
+// reveal dealer's second card
 updateDealerCards(true);
 
-// dealer hits until their score is 17 or higher
+// dealer hits until score is 17 or greater
 while (dealerScore < 17) {
 dealerHand.push(deck.pop());
 dealerScore += CARD_VALUES[dealerHand[dealerHand.length - 1]];
@@ -148,54 +144,72 @@ updateDealerCards(true);
 
 // check if dealer busts
 if (dealerScore > 21) {
-endRound(true, 'Dealer busts.');
+endRound(true, 'Dealer busts!');
 return;
 }
 
 // determine winner
 if (playerScore > dealerScore) {
-endRound(true, 'Player wins!');
+endRound(true, 'You win!');
 } else if (playerScore < dealerScore) {
-endRound(false, 'Dealer wins.');
+endRound(false, 'Dealer wins!');
 } else {
-endRound(false, 'Push.');
+endRound(false, 'Push!');
 }
 }
 
-function updateDealerCards(revealSecondCard = false) {
-let html = '';
-for (let i = 0; i < dealerHand.length; i++) {
-html += <div class="card">${revealSecondCard || i !== 1 ? dealerHand[i] : 'X'}</div>;
-}
-document.getElementById('dealer-cards').innerHTML = html;
-document.getElementById('dealer-score').innerHTML = Score: ${revealSecondCard ? dealerScore : CARD_VALUES[dealerHand[0]]};
-}
+function endRound(playerWins, message) {
+// display message
+alert(message);
 
-function updatePlayerCards() {
-let html = '';
-for (let i = 0; i < playerHand.length; i++) {
-html += <div class="card">${playerHand[i]}</div>;
-}
-document.getElementById('player-cards').innerHTML = html;
-document.getElementById('player-score').innerHTML = Score: ${playerScore};
-}
-
-function endRound(win, message) {
-if (win) {
+// update money and bet
+if (playerWins) {
 money += bet;
 } else {
 money -= bet;
 }
-updateMoney();
-alert(message);
-
-if (money < MIN_BET) {
-alert('Game over. You are out of money.');
-location.reload();
-} else {
-// reset bet and enable deal button
 bet = 0;
+updateMoney();
 updateBet();
+
+// enable/disable buttons
 document.getElementById('deal-button').disabled = false;
+document.getElementById('hit-button').disabled = true;
+document.getElementById('stand-button').disabled = true;
+}
+
+function updateDealerCards(showAll) {
+const dealerCardsElement = document.getElementById('dealer-cards');
+dealerCardsElement.innerHTML = 'Dealer's Hand<br>';
+for (let i = 0; i < dealerHand.length; i++) {
+if (i === 0 && !showAll) {
+dealerCardsElement.innerHTML += 'XX<br>';
+} else {
+dealerCardsElement.innerHTML += ${dealerHand[i]}<br>;
 }
 }
+}
+
+function updatePlayerCards() {
+const playerCardsElement = document.getElementById('player-cards');
+playerCardsElement.innerHTML = 'Player's Hand<br>';
+for (let i = 0; i < playerHand.length; i++) {
+playerCardsElement.innerHTML += ${playerHand[i]}<br>;
+}
+}
+
+function validateBet() {
+const betInput = document.getElementById('bet-input');
+const betAmount = Number(betInput.value);
+if (betAmount < MIN_BET || betAmount > MAX_BET || betAmount > money) {
+betInput.classList.add('is-invalid');
+document.getElementById('bet-help').classList.add('invalid-feedback');
+return false;
+}
+betInput.classList.remove('is-invalid');
+document.getElementById('bet-help').classList.remove('invalid-feedback');
+bet = betAmount;
+return true;
+}
+
+document.getElementById('bet-input').addEventListener('input', validateBet);
