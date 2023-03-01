@@ -1,0 +1,1374 @@
+(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([[748], {
+    5424: function(e, t, a) {
+        (window.__NEXT_P = window.__NEXT_P || []).push(["/games/blackjack", function() {
+            return a(7190)
+        }
+        ])
+    },
+    305: function(e) {
+        e.exports = {
+            container: "Confetti_container__Ierp1",
+            confettiContainer: "Confetti_confettiContainer__HJxiT",
+            confetti: "Confetti_confetti__UX4e5",
+            "confetti--animation-slow": "Confetti_confetti--animation-slow__9oUXR",
+            "confetti-slow": "Confetti_confetti-slow__QO5Wt",
+            "confetti--animation-medium": "Confetti_confetti--animation-medium__UNGzQ",
+            "confetti-medium": "Confetti_confetti-medium__WbMbK",
+            "confetti--animation-fast": "Confetti_confetti--animation-fast___nsuJ",
+            "confetti-fast": "Confetti_confetti-fast__BEOe6"
+        }
+    },
+    8727: function(e) {
+        e.exports = {
+            loading: "Loading_loading__eel_l",
+            overlay: "Loading_overlay__bFndD",
+            spin: "Loading_spin__ZLSLH",
+            pulse: "Loading_pulse__9AE_x",
+            rotate: "Loading_rotate__zT9Pz"
+        }
+    },
+    2503: function(e) {
+        e.exports = {
+            modalBackground: "Modal_modalBackground__xoIuy",
+            active: "Modal_active__0XcEU",
+            card: "Modal_card__e5Op2",
+            rotateGradient: "Modal_rotateGradient__fwm2I",
+            closeButton: "Modal_closeButton__yyQDN",
+            defaultContainer: "Modal_defaultContainer__0WEAa",
+            gameModal: "Modal_gameModal__dJSDn",
+            gameTitle: "Modal_gameTitle__6_Tr4",
+            buttonsContainer: "Modal_buttonsContainer__Bw5Os",
+            buttonEmpty: "Modal_buttonEmpty__1nMAt",
+            buttonFull: "Modal_buttonFull__ABmbz",
+            splash: "Modal_splash__aPXeI"
+        }
+    },
+    3982: function(e) {
+        e.exports = {
+            transactionBody: "RequestTransaction_transactionBody__di630"
+        }
+    },
+    8005: function(e) {
+        e.exports = {
+            loading: "Blackjack_loading__AD_n_",
+            gamePanel: "Blackjack_gamePanel___CEdX",
+            gameBackground: "Blackjack_gameBackground__llWcv",
+            disabled: "Blackjack_disabled__NjeQd",
+            playArea: "Blackjack_playArea__Udphu",
+            splitDeck: "Blackjack_splitDeck__6g_jY",
+            splitDeckScore: "Blackjack_splitDeckScore___Yg1s",
+            splitDeckResult: "Blackjack_splitDeckResult__7zLXf",
+            card: "Blackjack_card__jvnTC",
+            dealIn: "Blackjack_dealIn__L7Pj8",
+            splitCard: "Blackjack_splitCard__QsAs9",
+            glow: "Blackjack_glow__QHIzA",
+            score: "Blackjack_score__dgyIZ",
+            betDisplay: "Blackjack_betDisplay__PUzsq",
+            gameOptions: "Blackjack_gameOptions__kbdvA",
+            futuristicButton: "Blackjack_futuristicButton__ThDOC",
+            overlayElement: "Blackjack_overlayElement__yHR66",
+            overlay: "Blackjack_overlay__fUySg",
+            topLeft: "Blackjack_topLeft__VTMZ7",
+            topRight: "Blackjack_topRight__kv6aE",
+            bottomLeft: "Blackjack_bottomLeft__t_hsL",
+            bottomRight: "Blackjack_bottomRight__3X7DM",
+            amountSelectContainer: "Blackjack_amountSelectContainer__JWXO8",
+            buttonsContainer: "Blackjack_buttonsContainer__YUFTQ",
+            playAgain: "Blackjack_playAgain__tYzsZ",
+            chooseCardStyle: "Blackjack_chooseCardStyle__5CsoC",
+            active: "Blackjack_active__HJbGA",
+            chips: "Blackjack_chips__iuILE",
+            amountWonTitle: "Blackjack_amountWonTitle__iXz37"
+        }
+    },
+    890: function(e, t, a) {
+        "use strict";
+        a.d(t, {
+            Z: function() {
+                return i
+            }
+        });
+        var n = a(5893)
+          , c = a(305)
+          , s = a(8176)
+          , l = a(7294);
+        function i() {
+            let e = (0,
+            l.useRef)();
+            return (0,
+            l.useEffect)(()=>{
+                window.confettiful = new class {
+                    setupElements() {
+                        let e = document.createElement("div");
+                        this.el.style.position,
+                        e.classList.add("".concat(c.confettiContainer)),
+                        this.el.appendChild(e),
+                        this.containerEl = e
+                    }
+                    renderConfetti() {
+                        this.confettiInterval = setInterval(()=>{
+                            for (let e = 0; e < 5; e++) {
+                                let t = document.createElement("div")
+                                  , a = Math.floor((0,
+                                s.MX)(3, 15)) + "px"
+                                  , n = this.confettiColors[Math.floor(Math.random() * this.confettiColors.length)]
+                                  , l = Math.floor(Math.random() * this.el.offsetWidth) + "px"
+                                  , i = Math.floor((0,
+                                s.MX)(-100, 0)) + "px"
+                                  , r = this.confettiAnimations[Math.floor(Math.random() * this.confettiAnimations.length)];
+                                t.classList.add("".concat(c.confetti), c["confetti--animation-".concat(r)]),
+                                t.style.top = i,
+                                t.style.left = l,
+                                t.style.width = a,
+                                t.style.height = a,
+                                t.style.backgroundColor = n,
+                                t.removeTimeout = setTimeout(()=>{
+                                    t.parentNode.removeChild(t)
+                                }
+                                , 3e3),
+                                this.containerEl.appendChild(t)
+                            }
+                        }
+                        , 10)
+                    }
+                    constructor(e) {
+                        this.el = e,
+                        this.containerEl = null,
+                        this.confettiFrequency = 3,
+                        this.confettiColors = ["#fce18a", "#ff726d", "#b48def", "#f4306d", "#2bb3fc"],
+                        this.confettiAnimations = ["slow", "medium", "fast"],
+                        this.setupElements(),
+                        this.renderConfetti()
+                    }
+                }
+                (e.current)
+            }
+            , []),
+            (0,
+            n.jsx)("div", {
+                ref: e,
+                className: c.container
+            })
+        }
+    },
+    8042: function(e, t, a) {
+        "use strict";
+        a.d(t, {
+            Z: function() {
+                return L
+            }
+        });
+        var n, c, s, l, i, r, o, d, u, h, m, _, p, g, f, k, j, y, v, x, b = a(5893), w = a(8727), C = a(7294);
+        function N() {
+            return (N = Object.assign ? Object.assign.bind() : function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var a = arguments[t];
+                    for (var n in a)
+                        Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n])
+                }
+                return e
+            }
+            ).apply(this, arguments)
+        }
+        var E = function(e) {
+            return C.createElement("svg", N({
+                id: "Loading6_svg__a",
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 133.37 133.37"
+            }, e), n || (n = C.createElement("defs", null, C.createElement("style", null, ".Loading6_svg__c{fill:#0ff}.Loading6_svg__d{fill:#f80}.Loading6_svg__f{fill:#004163}"))), C.createElement("g", {
+                id: "Loading6_svg__b"
+            }, C.createElement("circle", {
+                cx: 66.69,
+                cy: 66.69,
+                r: 54.62,
+                style: {
+                    fill: "none",
+                    opacity: .5,
+                    stroke: "#004163",
+                    strokeMiterlimit: 10,
+                    strokeWidth: 14
+                }
+            }), c || (c = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "m133.37 66.69-.03 1.45-1.84-.04.04-1.41h1.83zM131.12 83.89l-.39 1.39-1.76-.51.38-1.35 1.77.47z"
+            })), s || (s = C.createElement("path", {
+                className: "Loading6_svg__d",
+                d: "m123.77 101.18.72-1.26-1.59-.91-.7 1.22 1.57.95z"
+            })), l || (l = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "M113.97 113.71c-.34.35-.7.67-1.04 1.01l-1.27-1.32c.34-.33.69-.64 1.01-.98l1.3 1.29Z"
+            })), i || (i = C.createElement("path", {
+                className: "Loading6_svg__c",
+                d: "m100.23 124.31-1.25.73-.89-1.61 1.22-.7.92 1.58z"
+            })), r || (r = C.createElement("path", {
+                className: "Loading6_svg__d",
+                d: "M82.84 131.39c.47-.1.94-.24 1.4-.37l-.48-1.77c-.45.13-.9.26-1.36.36l.44 1.78Z"
+            })), o || (o = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "M67.05 133.37c-.48.02-.97-.01-1.45-.02l.03-1.83c.47 0 .94.04 1.41.02v1.83ZM49.83 131.22l-1.39-.39.5-1.77 1.35.39-.46 1.77zM33.76 124.67l-1.25-.72.94-1.57 1.22.7-.91 1.59zM19.92 114.22c-.36-.33-.69-.68-1.02-1.03l1.31-1.28c.32.34.64.69.99 1l-1.29 1.31Z"
+            })), d || (d = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "M19.92 114.22c-.36-.33-.69-.68-1.02-1.03l1.31-1.28c.32.34.64.69.99 1l-1.29 1.31Z"
+            })), u || (u = C.createElement("path", {
+                className: "Loading6_svg__c",
+                d: "m9.24 100.55-.72-1.26 1.59-.89.71 1.22-1.58.93z"
+            })), h || (h = C.createElement("path", {
+                className: "Loading6_svg__d",
+                d: "M2.06 83.19c.12.47.26.93.39 1.4l1.77-.49c-.12-.45-.26-.9-.38-1.36l-1.78.45Z"
+            })), m || (m = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "M.02 67.41c-.02-.48-.02-.97 0-1.45l1.83.02c-.02.47-.02.94 0 1.41l-1.83.02ZM2.06 50.18c.12-.47.26-.93.39-1.4l1.77.49c-.12.45-.26.9-.38 1.36l-1.78-.45ZM8.52 34.08l.72-1.26 1.58.94-.71 1.22-1.59-.9zM18.9 20.19c.33-.35.66-.7 1.02-1.03l1.29 1.31c-.35.32-.67.66-.99 1l-1.31-1.28Z"
+            })), _ || (_ = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "M18.9 20.19c.33-.35.66-.7 1.02-1.03l1.29 1.31c-.35.32-.67.66-.99 1l-1.31-1.28ZM32.51 9.42l1.25-.72.91 1.59-1.22.7-.94-1.57zM48.44 2.55l1.39-.4.46 1.78-1.35.38-.5-1.76zM65.6.03c.48 0 .97-.04 1.45-.02v1.83c-.48-.02-.95.01-1.42.02L65.6.03Z"
+            })), p || (p = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "M65.6.03c.48 0 .97-.04 1.45-.02v1.83c-.48-.02-.95.01-1.42.02L65.6.03ZM82.84 1.98c.47.1.94.24 1.4.37l-.48 1.77c-.45-.13-.9-.26-1.36-.36l.44-1.78ZM98.98 8.34l1.25.72-.92 1.58-1.22-.7.89-1.6z"
+            })), g || (g = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "m98.98 8.34 1.25.72-.92 1.58-1.22-.7.89-1.6z"
+            })), f || (f = C.createElement("path", {
+                className: "Loading6_svg__c",
+                d: "M112.92 18.66c.35.34.71.66 1.04 1.01l-1.3 1.29c-.33-.34-.68-.65-1.01-.98l1.27-1.32Z"
+            })), k || (k = C.createElement("path", {
+                className: "Loading6_svg__d",
+                d: "m124.49 33.45-.72-1.25-1.57.94.7 1.23 1.59-.92z"
+            })), j || (j = C.createElement("path", {
+                className: "Loading6_svg__f",
+                d: "m130.73 48.09.39 1.39-1.77.48-.38-1.36 1.76-.51z"
+            })), y || (y = C.createElement("path", {
+                className: "Loading6_svg__d",
+                d: "m133.37 66.69-.03-1.45-1.84.04.04 1.41h1.83z"
+            }))))
+        };
+        function S() {
+            return (S = Object.assign ? Object.assign.bind() : function(e) {
+                for (var t = 1; t < arguments.length; t++) {
+                    var a = arguments[t];
+                    for (var n in a)
+                        Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n])
+                }
+                return e
+            }
+            ).apply(this, arguments)
+        }
+        var D = function(e) {
+            return C.createElement("svg", S({
+                id: "Loading4_svg__a",
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 132 132"
+            }, e), v || (v = C.createElement("defs", null, C.createElement("style", null, ".Loading4_svg__g{fill:#004163}"))), C.createElement("g", {
+                id: "Loading4_svg__b"
+            }, C.createElement("path", {
+                d: "M66 132c-36.39 0-66-29.61-66-66S29.61 0 66 0s66 29.61 66 66-29.61 66-66 66Zm0-111.15C41.1 20.85 20.85 41.1 20.85 66S41.1 111.15 66 111.15 111.15 90.9 111.15 66 90.9 20.85 66 20.85Z",
+                style: {
+                    fill: "#004163",
+                    opacity: .3
+                }
+            }), C.createElement("g", {
+                style: {
+                    opacity: .5
+                }
+            }, x || (x = C.createElement("path", {
+                className: "Loading4_svg__g",
+                d: "M8.6 98.6A66.094 66.094 0 0 1 .03 67.9l20.84-.59c.21 7.36 2.23 14.61 5.85 20.98L8.6 98.6ZM124.32 96.93l-18.41-9.78c3.48-6.55 5.25-13.67 5.25-21.15 0-5.74-1.06-11.32-3.15-16.6l19.39-7.67c3.06 7.73 4.61 15.89 4.61 24.27 0 10.77-2.66 21.47-7.68 30.93ZM21.29 59.69.64 56.81a65.882 65.882 0 0 1 11.94-29.56L29.45 39.5a45.188 45.188 0 0 0-8.16 20.19Z"
+            }))), C.createElement("path", {
+                d: "M126.57 43.6c2.65 7.17 4 14.69 4 22.39 0 10.06-2.37 20.05-6.86 28.99l-1.49-.79c4.37-8.68 6.67-18.4 6.67-28.19 0-7.5-1.3-14.82-3.87-21.78l1.56-.62m.82-1.86-4.22 1.67A61.414 61.414 0 0 1 127.46 66c0 10.4-2.59 20.2-7.16 28.79l4.02 2.14C129.34 87.47 132 76.78 132 66c0-8.37-1.55-16.53-4.61-24.26Z",
+                style: {
+                    fill: "#f80"
+                }
+            }), C.createElement("path", {
+                d: "M16.25 29.92A60.902 60.902 0 0 0 5.14 57.43l-4.5-.63c1.49-10.63 5.62-20.85 11.94-29.56l3.68 2.67Z",
+                style: {
+                    fill: "#0ff"
+                }
+            })))
+        };
+        function L(e) {
+            let {overlay: t} = e;
+            return (0,
+            b.jsxs)("div", {
+                className: "".concat(w.loading, " ").concat(t ? w.overlay : ""),
+                children: [(0,
+                b.jsxs)("div", {
+                    children: [(0,
+                    b.jsx)("h1", {
+                        children: "Loading"
+                    }), (0,
+                    b.jsxs)("div", {
+                        children: [(0,
+                        b.jsx)("span", {
+                            className: w.pulse,
+                            children: "."
+                        }), (0,
+                        b.jsx)("span", {
+                            className: w.pulse,
+                            children: "."
+                        }), (0,
+                        b.jsx)("span", {
+                            className: w.pulse,
+                            children: "."
+                        })]
+                    })]
+                }), (0,
+                b.jsxs)("div", {
+                    children: [(0,
+                    b.jsx)(E, {}), (0,
+                    b.jsx)(D, {})]
+                })]
+            })
+        }
+    },
+    1226: function(e, t, a) {
+        "use strict";
+        a.d(t, {
+            u: function() {
+                return l
+            }
+        });
+        var n = a(5893)
+          , c = a(7294)
+          , s = a(2503);
+        let l = e=>{
+            let {title: t, body: a, footer: l, canClose: i=!0, callback: r, modalStyle: o=0, children: d, timeout: u} = e
+              , [h,m] = (0,
+            c.useState)(!0)
+              , _ = (0,
+            c.useCallback)(e=>{
+                i && (void 0 != r && h && r.apply(void 0),
+                m(void 0 !== e ? e : !h))
+            }
+            , [r, i, h])
+              , p = function() {
+                let e, t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 300, a = arguments.length > 1 ? arguments[1] : void 0;
+                return function() {
+                    for (var n = arguments.length, c = Array(n), s = 0; s < n; s++)
+                        c[s] = arguments[s];
+                    clearTimeout(e),
+                    e = setTimeout(()=>{
+                        "function" == typeof a && a(...c)
+                    }
+                    , t)
+                }
+            };
+            return (0,
+            c.useEffect)(()=>{
+                p(u, r)()
+            }
+            , [r, u, _]),
+            (0,
+            n.jsx)(n.Fragment, {
+                children: (0,
+                n.jsx)("div", {
+                    className: "".concat(s.modalBackground, " ").concat(h ? s.active : ""),
+                    children: (0,
+                    n.jsxs)("div", {
+                        className: "".concat(s.card, " ").concat(h ? s.active : ""),
+                        "data-modal-style": o.toString(),
+                        children: [i && (0,
+                        n.jsx)("button", {
+                            className: s.closeButton,
+                            onClick: ()=>_(!1),
+                            children: "✕"
+                        }), void 0 !== d ? d : (0,
+                        n.jsxs)(n.Fragment, {
+                            children: [t && (0,
+                            n.jsx)("h1", {
+                                children: t
+                            }), a && (0,
+                            n.jsx)("div", {
+                                children: a
+                            }), l && (0,
+                            n.jsx)("footer", {
+                                children: l
+                            })]
+                        })]
+                    })
+                })
+            })
+        }
+    },
+    1672: function(e, t, a) {
+        "use strict";
+        a.d(t, {
+            Z: function() {
+                return d
+            }
+        });
+        var n = a(5893)
+          , c = a(7294)
+          , s = a(9181)
+          , l = a(5961)
+          , i = a(1226)
+          , r = a(5675)
+          , o = a(3982);
+        function d(e) {
+            let {amount: t, withFee: a=!1, callback: d} = e
+              , [u,h] = (0,
+            c.useState)(null)
+              , m = (0,
+            c.useRef)(!1);
+            t = Math.abs(t);
+            let _ = ()=>{
+                h(null)
+            }
+              , p = (0,
+            c.useRef)(null)
+              , g = (0,
+            c.useRef)();
+            return (0,
+            c.useEffect)(()=>{
+                let e = e=>{
+                    let {success: t, uuid: a} = e;
+                    g.current && "function" == typeof g.current.close && (g.current.close(),
+                    "function" == typeof d && d({
+                        success: t,
+                        uuid: a
+                    }))
+                }
+                  , c = async()=>{
+                    if (!0 === m.current || (p.current = (0,
+                    s.Ty)(),
+                    !p.current.account))
+                        return;
+                    m.current = !0;
+                    let c = await (0,
+                    l.w)("/api/transaction", {
+                        action: "create",
+                        account: p.current.account,
+                        amount: t,
+                        withFee: a
+                    });
+                    if (!c || c.error || !1 === c.success) {
+                        h({
+                            title: "Oops",
+                            body: "There was an error creating this transaction. We only allow one active session per account. If you're signed in on other devices, sign out and back in on the device you wish to keep playing on. If the issue persists, please contact support.",
+                            timeout: 5e3,
+                            canClose: !1,
+                            callback: _
+                        }),
+                        e({
+                            success: !1
+                        });
+                        return
+                    }
+                    let {refs: i, next: d} = c.data;
+                    g.current = new WebSocket(i.websocket_status),
+                    g.current.addEventListener("close", ()=>g.current.close()),
+                    g.current.addEventListener("error", ()=>e({
+                        success: !1
+                    })),
+                    g.current.addEventListener("message", async n=>{
+                        let c = JSON.parse(n.data);
+                        if ((!0 === c.expired || !1 === c.signed || c.expires_in_seconds && c.expires_in_seconds <= 0) && (h({
+                            title: "Oops",
+                            body: "The transaction has either expired or has been declined. Please try again.",
+                            timeout: 5e3,
+                            canClose: !1,
+                            callback: _
+                        }),
+                        e({
+                            success: !1
+                        })),
+                        !0 === c.opened && h({
+                            title: "Almost there...",
+                            body: "You have opened the transaction. Slide the 'Approve transaction' slider to confirm.",
+                            canClose: !1
+                        }),
+                        !0 === c.signed) {
+                            h({
+                                title: "Verifying transaction...",
+                                body: "We're verifying the transaction on our end... Please stand by.",
+                                canClose: !1
+                            });
+                            let s = await (0,
+                            l.w)("/api/transaction", {
+                                action: "verify",
+                                account: p.current.account,
+                                uuid: c.payload_uuidv4,
+                                amount: t,
+                                withFee: a
+                            });
+                            if (!s || s.error) {
+                                h({
+                                    title: "Oh no...",
+                                    body: "An error occured on our end. Please try again.",
+                                    canClose: !1,
+                                    callback() {
+                                        _(),
+                                        e({
+                                            success: !1
+                                        })
+                                    },
+                                    timeout: 1e4
+                                });
+                                return
+                            }
+                            if (!1 === s.valid) {
+                                h({
+                                    title: "Invalid Transaction",
+                                    body: "That transaction was not valid. We have refunded the XRP. Please make sure you're signing the transaction with the same account you're logged in with.",
+                                    canClose: !1,
+                                    callback() {
+                                        _(),
+                                        e({
+                                            success: !1
+                                        })
+                                    },
+                                    timeout: 5e3
+                                });
+                                return
+                            }
+                            _(),
+                            e({
+                                success: !0,
+                                uuid: c.payload_uuidv4
+                            })
+                        }
+                    }
+                    ),
+                    h({
+                        title: "Approve the transaction.",
+                        body: (0,
+                        n.jsxs)("div", {
+                            className: o.transactionBody,
+                            children: [(0,
+                            n.jsx)("span", {
+                                children: "Scan this QR code with your Xumm app to approve the transaction."
+                            }), (0,
+                            n.jsx)(r, {
+                                src: i.qr_png,
+                                unoptimized: !0,
+                                width: 292,
+                                height: 292,
+                                alt: "QR Code"
+                            }), (0,
+                            n.jsxs)("span", {
+                                children: ["If you're on mobile, use the following ", (0,
+                                n.jsx)("a", {
+                                    href: d.always,
+                                    target: "_blank",
+                                    rel: "noreferrer",
+                                    children: "Xumm link"
+                                }), " instead."]
+                            })]
+                        })
+                    })
+                }
+                ;
+                c()
+            }
+            , [t, d, a]),
+            (0,
+            n.jsx)(n.Fragment, {
+                children: u && (0,
+                n.jsx)(i.u, {
+                    ...u
+                })
+            })
+        }
+    },
+    644: function(e, t, a) {
+        "use strict";
+        a.d(t, {
+            c: function() {
+                return c
+            }
+        });
+        var n = a(7294);
+        function c() {
+            let e = (0,
+            n.useRef)(!1)
+              , t = (0,
+            n.useRef)(null)
+              , a = a=>{
+                if (!0 === e.current && c(),
+                !a && t.current) {
+                    t.current.src = "";
+                    return
+                }
+                void 0 !== a && (t.current ? (t.current.src = "/sounds/" + a,
+                t.current.load()) : (t.current = new Audio("/sounds/" + a),
+                t.current.autoplay = !0),
+                t.current.play().then(()=>{}
+                ).catch(e=>{}
+                ),
+                t.current.addEventListener("ended", s))
+            }
+              , c = ()=>{
+                var e;
+                null === (e = t.current) || void 0 === e || e.pause(),
+                t.current && (t.current.currentTime = 0)
+            }
+              , s = ()=>{
+                e.current = !1
+            }
+            ;
+            return a
+        }
+    },
+    7190: function(e, t, a) {
+        "use strict";
+        a.r(t);
+        var n = a(5893)
+          , c = a(5961)
+          , s = a(9181)
+          , l = a(1226)
+          , i = a(644)
+          , r = a(7294)
+          , o = a(890)
+          , d = a(4587)
+          , u = a(9008)
+          , h = a(5675)
+          , m = a(1664)
+          , _ = a(8042)
+          , p = a(2503)
+          , g = a(8005)
+          , f = a(1672);
+        let k = {
+            PLAYER: 0,
+            DEALER: 1,
+            TIE: 2,
+            NOONE: 4,
+            ERROR: 8
+        }
+          , j = {
+            UNINITIALIZED: 0,
+            INITIALIZED: 1,
+            WIN: 2,
+            LOSS: 3
+        }
+          , y = {
+            DEFAULT: "Fortunes-Card",
+            FORTUNES: "Fortunes-Diamond-Card",
+            SGS: "Fortunes-SGS-Card",
+            SGS2: "Fortunes-SGS2-Card",
+            STAYKX: "Fortunes-STAYKX-Card",
+            FSX: "Fortunes-XS-Card",
+            XWALKERS: "Fortunes-XWALKER-Card",
+            XWALKER2: "Fortunes-XWalker-Crest-Card",
+            QWAKEN: "Fortunes-Qwaken-Card",
+            SOLO: "Fortunes-SOLO-Card",
+            AW: "Fortunes-AW-Card"
+        };
+        function v(e) {
+            let {setGameState: t, credentials: a, setBetAmount: s} = e
+              , [i,o] = (0,
+            r.useState)(!1)
+              , [d,u] = (0,
+            r.useState)(null)
+              , [_,p] = (0,
+            r.useState)(!1)
+              , [k,y] = (0,
+            r.useState)(1)
+              , v = ()=>{
+                u(null)
+            }
+              , x = e=>{
+                let t = parseFloat(e.currentTarget.value);
+                isNaN(t) ? y(0) : y(t = Math.min(1e3, Math.max(0, t = Math.abs(Math.round(100 * t) / 100))))
+            }
+              , b = async e=>{
+                let {success: n, uuid: l} = e;
+                if (!n)
+                    return;
+                let i = await (0,
+                c.w)("/api/games/blackjack", {
+                    action: "paymentCompleted",
+                    account: a.account,
+                    uuid: l
+                });
+                if (p(!1),
+                !i.success || i.error) {
+                    u({
+                        title: "...Oops",
+                        body: "Something went wrong. Please try again",
+                        canClose: !1,
+                        timeout: 5e3,
+                        callback: v
+                    });
+                    return
+                }
+                t(j.INITIALIZED),
+                s(k)
+            }
+              , w = async()=>{
+                if (!i && null !== a) {
+                    if (k < 1 || k > 1e3) {
+                        u({
+                            title: "...Oops",
+                            body: "Your bet amount must be between 1 and 1000 XRP",
+                            canClose: !1,
+                            timeout: 5e3,
+                            callback: v
+                        });
+                        return
+                    }
+                    p(!0)
+                }
+            }
+            ;
+            return (0,
+            n.jsxs)(n.Fragment, {
+                children: [!0 === _ && (0,
+                n.jsx)(f.Z, {
+                    amount: k,
+                    withFee: !0,
+                    callback: b
+                }), d && (0,
+                n.jsx)(l.u, {
+                    ...d
+                }), (0,
+                n.jsxs)("div", {
+                    className: g.amountSelectContainer,
+                    children: [(0,
+                    n.jsx)("h1", {
+                        children: "Fortunes Blackjack"
+                    }), (0,
+                    n.jsx)("p", {
+                        children: "To initate a match of Blackjack, enter the amount of XRP you'd like to play with. After your payment, the game will be created. Each game is a single match, you'll receive double your initial amount if you win. After the match is paid for, it will be readily available regardless of leaving the site or refreshing the page."
+                    }), (0,
+                    n.jsx)("h4", {
+                        children: "How much XRP do you want to use?"
+                    }), (0,
+                    n.jsxs)("label", {
+                        children: ["Amount", (0,
+                        n.jsx)("input", {
+                            className: g.betSize,
+                            onChange: x,
+                            value: k,
+                            type: "number",
+                            placeholder: "1"
+                        })]
+                    }), (0,
+                    n.jsx)("div", {
+                        className: g.chips,
+                        children: [1, 5, 10, 25, 50, 100].map(e=>(0,
+                        n.jsx)(h, {
+                            alt: "",
+                            src: "/images/games/blackjack/chips/chips-".concat(e, ".png"),
+                            width: 450,
+                            height: 450,
+                            onClick() {
+                                y(k + e)
+                            }
+                        }, e))
+                    }), (0,
+                    n.jsxs)("div", {
+                        className: g.buttonsContainer,
+                        children: [(0,
+                        n.jsx)("button", {
+                            className: "fortunes",
+                            children: (0,
+                            n.jsx)(m, {
+                                href: "/rules/blackjack",
+                                children: "Rules"
+                            })
+                        }), (0,
+                        n.jsx)("button", {
+                            className: "fortunes",
+                            onClick: ()=>y(1),
+                            children: "Reset"
+                        }), (0,
+                        n.jsx)("button", {
+                            className: "fortunes gold",
+                            onClick: w,
+                            children: "Play"
+                        })]
+                    })]
+                })]
+            })
+        }
+        function x(e) {
+            var t, a, u, _;
+            let {setGameState: k, setHasCurrentGame: v, credentials: x, backStyle: D, setBackStyle: L} = e
+              , [M,A] = (0,
+            r.useState)(!1)
+              , [B,P] = (0,
+            r.useState)(!1)
+              , [I,R] = (0,
+            r.useState)(!1)
+              , [T,O] = (0,
+            r.useState)({})
+              , [Z,W] = (0,
+            r.useState)(null)
+              , [F,X] = (0,
+            r.useState)(!1)
+              , z = (0,
+            r.useRef)()
+              , G = (0,
+            r.useRef)()
+              , U = (0,
+            i.c)()
+              , H = ()=>{
+                W(null)
+            }
+              , V = e=>{
+                (0,
+                s.qQ)("preferredCardStyle", e),
+                L(e)
+            }
+              , Q = async e=>{
+                let {success: t, uuid: a} = e;
+                if (!t)
+                    return;
+                let n = await (0,
+                c.w)("/api/games/blackjack", {
+                    action: z.current,
+                    account: x.account,
+                    uuid: a
+                });
+                if (X(!1),
+                n.error) {
+                    W({
+                        title: "...Oops",
+                        body: "Something went wrong. Please try again",
+                        canClose: !1,
+                        timeout: 5e3,
+                        callback: H
+                    });
+                    return
+                }
+                Y(z.current, n),
+                z.current
+            }
+              , Y = async(e,t)=>{
+                void 0 === G.current && (G.current = e,
+                P(!1),
+                t || (t = await (0,
+                c.w)("/api/games/blackjack", {
+                    action: e,
+                    account: x.account
+                })),
+                G.current = void 0,
+                !t.error && (T.playerDeck && T.dealerDeck && (t.newDealerCards = C(T.dealerDeck, t.dealerDeck),
+                t.newPlayerCards = C(T.playerDeck, t.playerDeck)),
+                O(t),
+                P(!0),
+                t.completed && setTimeout(()=>{
+                    var e, a;
+                    let c = E(t.currentHandWinResult, t.playerDeckScore, t.playerDeck.length);
+                    R(!0 === t.playerWins),
+                    W({
+                        children: (0,
+                        n.jsxs)("div", {
+                            className: p.gameModal,
+                            children: [(0,
+                            n.jsxs)("div", {
+                                className: p.gameTitle,
+                                children: [(0,
+                                n.jsx)("h3", {
+                                    children: !0 === t.playerWins ? "Player Wins!" : !1 === t.playerWins ? "Player Loses" : "Player Push"
+                                }), (0,
+                                n.jsx)(h, {
+                                    src: "/images/games/blackjack/blackjack-stats-icon.png",
+                                    width: 78,
+                                    height: 40,
+                                    alt: ""
+                                })]
+                            }), "PUSH" !== c && U("blackjack/" + (t.playerWins ? "win.wav" : "loss.wav")), !0 !== t.playerWins || 21 !== t.playerDeckScore || (null === (e = t.playerDeck) || void 0 === e ? void 0 : e.length) != 2 || t.splitDeckScore ? (0,
+                            n.jsxs)(n.Fragment, {
+                                children: [(0,
+                                n.jsxs)("div", {
+                                    className: g.amountWonTitle,
+                                    children: [E(t.currentHandWinResult, t.playerDeckScore, t.playerDeck.length), " ", t.amount + (t.splitDeck && "BUST" !== E(t.splitHandWinResult, t.splitDeckScore, t.splitDeck.length) ? t.amount : 0), " XRP"]
+                                }), (0,
+                                n.jsxs)("ul", {
+                                    children: [(0,
+                                    n.jsx)("h4", {
+                                        children: "Dealer's Cards"
+                                    }), (0,
+                                    n.jsxs)("li", {
+                                        children: [(0,
+                                        n.jsx)("h5", {
+                                            children: "Dealer Hand"
+                                        }), (0,
+                                        n.jsx)("h6", {
+                                            children: t.dealerDeckScore
+                                        })]
+                                    })]
+                                }), (0,
+                                n.jsxs)("ul", {
+                                    children: [(0,
+                                    n.jsx)("h4", {
+                                        children: "Player's Cards"
+                                    }), (0,
+                                    n.jsxs)("li", {
+                                        children: [(0,
+                                        n.jsxs)("h5", {
+                                            "data-color": S(t.currentHandWinResult, t.playerDeckScore, t.playerDeck.length),
+                                            children: ["Player ", E(t.currentHandWinResult, t.playerDeckScore, t.playerDeck.length)]
+                                        }), (0,
+                                        n.jsx)("h6", {
+                                            children: t.playerDeckScore
+                                        })]
+                                    }), t.splitDeckScore && (0,
+                                    n.jsx)(n.Fragment, {
+                                        children: (0,
+                                        n.jsxs)("li", {
+                                            children: [(0,
+                                            n.jsxs)("h5", {
+                                                "data-color": S(t.splitHandWinResult, t.splitDeckScore, t.splitDeck.length),
+                                                children: ["Player ", E(t.splitHandWinResult, t.splitDeckScore, t.splitDeck.length)]
+                                            }), (0,
+                                            n.jsx)("h6", {
+                                                children: t.splitDeckScore
+                                            })]
+                                        })
+                                    })]
+                                })]
+                            }) : (0,
+                            n.jsxs)("div", {
+                                className: p.splash,
+                                children: [(0,
+                                n.jsx)(h, {
+                                    src: "/images/fortunes_splash.png",
+                                    alt: "",
+                                    width: 960,
+                                    height: 275
+                                }), (0,
+                                n.jsx)(h, {
+                                    src: "/images/PNG/Aim5.png",
+                                    alt: "",
+                                    width: 650,
+                                    height: 542
+                                }), (0,
+                                n.jsx)("h2", {
+                                    children: "Congratulations"
+                                }), (0,
+                                n.jsx)("h1", {
+                                    children: "Blackjack"
+                                }), (0,
+                                n.jsx)("h2", {
+                                    children: "Player wins 21"
+                                })]
+                            }), (0,
+                            n.jsxs)("div", {
+                                className: p.buttonsContainer,
+                                children: [(0,
+                                n.jsx)("button", {
+                                    className: "fortunes",
+                                    children: (0,
+                                    n.jsx)(m, {
+                                        href: "/",
+                                        children: "Back to home"
+                                    })
+                                }), (0,
+                                n.jsx)("button", {
+                                    className: "fortunes gold",
+                                    onClick() {
+                                        R(!1),
+                                        H(),
+                                        k(j.UNINITIALIZED),
+                                        v(!1)
+                                    },
+                                    children: "Play again"
+                                })]
+                            })]
+                        }),
+                        canClose: !1,
+                        modalStyle: !0 !== t.playerWins || 21 !== t.playerDeckScore || (null === (a = t.playerDeck) || void 0 === a ? void 0 : a.length) != 2 || t.splitDeckScore ? !1 === t.playerWins ? 1 : 0 : 3
+                    })
+                }
+                , 5e3)))
+            }
+            ;
+            return (0,
+            r.useEffect)(()=>{
+                Y("initiateGame")
+            }
+            , []),
+            (0,
+            n.jsxs)(n.Fragment, {
+                children: [I && (0,
+                n.jsx)(o.Z, {}), F && (0,
+                n.jsx)(f.Z, {
+                    amount: T.amount,
+                    withFee: !0,
+                    callback: Q,
+                    endpoint: "games/blackjack"
+                }), Z && (0,
+                n.jsx)(l.u, {
+                    ...Z
+                }), (0,
+                n.jsxs)("div", {
+                    className: g.gamePanel,
+                    children: [(0,
+                    n.jsx)(h, {
+                        id: g.gameBackground,
+                        src: "/images/PNG/Aim5.png",
+                        alt: "",
+                        width: 400,
+                        height: 450
+                    }), (0,
+                    n.jsxs)("div", {
+                        className: g.score,
+                        "data-side": "dealer",
+                        children: [(0,
+                        n.jsx)(h, {
+                            src: "/images/PNG/Line5.png",
+                            alt: "side",
+                            width: 600,
+                            height: 100
+                        }), (0,
+                        n.jsxs)("span", {
+                            children: ["Dealer has ", (0,
+                            n.jsx)("span", {
+                                children: T.dealerDeckScore
+                            })]
+                        }), (0,
+                        n.jsx)(h, {
+                            src: "/images/PNG/Line5.png",
+                            alt: "side",
+                            width: 600,
+                            height: 100
+                        })]
+                    }), (0,
+                    n.jsx)("div", {
+                        className: g.playArea,
+                        "data-side": "dealer",
+                        children: null === (t = T.dealerDeck) || void 0 === t ? void 0 : t.map((e,t)=>{
+                            let a = 0 === t && !0 === T.completed
+                              , c = !a && N(T, "dealer", e)
+                              , s = T.newDealerCards && c
+                              , l = Math.PI / T.dealerDeck.length * t;
+                            return (0,
+                            n.jsx)("div", {
+                                className: "".concat(g.card, " ").concat(c ? g.dealIn : "", " ").concat(a ? g.flipped : ""),
+                                "data-index": s ? 0 : t,
+                                children: (0,
+                                n.jsx)("div", {
+                                    style: {
+                                        transform: "rotateZ(".concat(Math.atan2(Math.cos(l), Math.sin(l)) * (30 / Math.PI) - 7.5, "deg)")
+                                    },
+                                    children: (0,
+                                    n.jsx)(h, {
+                                        src: w(D, e),
+                                        alt: "Dealer: ".concat(e.stringValue, "-").concat(e.suit),
+                                        width: 133,
+                                        height: 185
+                                    })
+                                })
+                            }, "".concat(e.stringValue, "-").concat(e.suit, "-").concat(t))
+                        }
+                        )
+                    }), (0,
+                    n.jsx)("div", {
+                        className: g.playArea,
+                        "data-side": "player",
+                        children: null === (a = T.playerDeck) || void 0 === a ? void 0 : a.map((e,t)=>{
+                            let a = N(T, "player", e)
+                              , c = T.newPlayerCards && a
+                              , s = Math.PI / T.playerDeck.length * t;
+                            return (0,
+                            n.jsx)("div", {
+                                className: "".concat(g.card, " ").concat(a ? g.dealIn : ""),
+                                "data-index": c ? 0 : t + 1,
+                                children: (0,
+                                n.jsx)("div", {
+                                    style: {
+                                        transform: "rotateZ(".concat(Math.atan2(Math.cos(s), Math.sin(s)) * (-25 / Math.PI) - -6.25, "deg)")
+                                    },
+                                    children: (0,
+                                    n.jsx)(h, {
+                                        src: w(D, e),
+                                        alt: "Player: ".concat(e.stringValue, "-").concat(e.suit),
+                                        width: 133,
+                                        height: 185
+                                    })
+                                })
+                            }, "".concat(e.stringValue, "-").concat(e.suit, "-").concat(t))
+                        }
+                        )
+                    }), T.splitDeck && (0,
+                    n.jsxs)("div", {
+                        className: g.splitDeck,
+                        children: [(0,
+                        n.jsxs)("div", {
+                            className: g.splitDeckScore,
+                            children: ["Split Hand ", (0,
+                            n.jsx)("span", {
+                                children: T.splitDeckScore
+                            })]
+                        }), T.splitDeck.map((e,t)=>{
+                            let a = Math.PI / T.splitDeck.length * t;
+                            return (0,
+                            n.jsx)("div", {
+                                className: "".concat(g.card, " ").concat(g.splitCard),
+                                "data-index": t + 1,
+                                style: {
+                                    transform: "rotateZ(".concat(Math.atan2(Math.cos(a), Math.sin(a)) * (-25 / Math.PI) - -6.25, "deg)")
+                                },
+                                children: (0,
+                                n.jsx)(h, {
+                                    src: w(D, e),
+                                    alt: "Player: ".concat(e.stringValue, "-").concat(e.suit),
+                                    width: 133,
+                                    height: 185
+                                })
+                            }, "".concat(e.stringValue, "-").concat(e.suit))
+                        }
+                        )]
+                    }), (0,
+                    n.jsxs)("div", {
+                        className: g.score,
+                        "data-side": "player",
+                        children: [(0,
+                        n.jsx)(h, {
+                            src: "/images/PNG/Line5.png",
+                            alt: "side",
+                            width: 600,
+                            height: 100
+                        }), (0,
+                        n.jsxs)("span", {
+                            children: ["Player has ", (0,
+                            n.jsx)("span", {
+                                children: T.playerDeckScore
+                            })]
+                        }), (0,
+                        n.jsx)(h, {
+                            src: "/images/PNG/Line5.png",
+                            alt: "side",
+                            width: 600,
+                            height: 100
+                        })]
+                    }), (0,
+                    n.jsxs)("div", {
+                        className: g.gameOptions,
+                        children: [(null === (u = T.playerDeck) || void 0 === u ? void 0 : u.length) == 2 && !T.doubled && !T.splitDeck && T.amount < 500 && (0,
+                        n.jsx)(b, {
+                            text: "double",
+                            disabled: T.completed || !B,
+                            onClick() {
+                                z.current = "double",
+                                P(!1),
+                                X(!0)
+                            }
+                        }), (0,
+                        n.jsx)(b, {
+                            text: "hit",
+                            disabled: T.completed || !B,
+                            onClick: ()=>Y("hit")
+                        }), (0,
+                        n.jsx)(b, {
+                            text: "stand",
+                            disabled: T.completed || !B,
+                            onClick: ()=>Y("stay")
+                        }), !T.splitDeck && !T.doubled && (null === (_ = T.playerDeck) || void 0 === _ ? void 0 : _.length) == 2 && function(e) {
+                            if (!e)
+                                return !1;
+                            let t = e.reduce((e,t,a)=>{
+                                let {stringValue: n, value: c} = t
+                                  , s = "A" === n ? "A" : c.toString();
+                                return s in e ? e[s].push(a) : e[s] = [a],
+                                e
+                            }
+                            , {})
+                              , a = e.filter(e=>"A" == e.stringValue).map((e,t)=>{
+                                let {stringValue: a, value: n} = e;
+                                return {
+                                    i: t,
+                                    value: n,
+                                    stringValue: a
+                                }
+                            }
+                            );
+                            return a.length > 1 && (t.A = a),
+                            [...Object.entries(t)].filter(e=>e[1].length > 1).sort((e,t)=>t[1].length - e[1].length)
+                        }(T.playerDeck).length >= 1 && (0,
+                        n.jsx)(b, {
+                            text: "split",
+                            disabled: T.completed || !B,
+                            onClick() {
+                                z.current = "split",
+                                P(!1),
+                                X(!0)
+                            }
+                        })]
+                    }), (0,
+                    n.jsxs)("div", {
+                        id: g.betDisplay,
+                        children: [(0,
+                        n.jsx)(h, {
+                            src: "/images/PNG/Button4.png",
+                            alt: "side",
+                            width: 200,
+                            height: 50
+                        }), "AMOUNT:", (0,
+                        n.jsx)("span", {
+                            children: T.amount
+                        })]
+                    }), (0,
+                    n.jsxs)("div", {
+                        className: "".concat(g.chooseCardStyle, " ").concat(M ? g.active : ""),
+                        children: [(0,
+                        n.jsxs)("button", {
+                            onClick: ()=>A(!M),
+                            children: [(0,
+                            n.jsx)(h, {
+                                src: "/images/PNG/Button5.png",
+                                alt: "side",
+                                width: 200,
+                                height: 50
+                            }), "Choose Deck", (0,
+                            n.jsx)(d.Z, {})]
+                        }), (0,
+                        n.jsx)("ul", {
+                            children: Object.entries(y).map(e=>(0,
+                            n.jsx)("li", {
+                                onClick() {
+                                    V(e[1]),
+                                    A(!1)
+                                },
+                                children: (0,
+                                n.jsx)(h, {
+                                    className: g.dropDownCard,
+                                    src: "/images/games/blackjack/".concat(e[1], ".png"),
+                                    alt: e[0],
+                                    width: 250,
+                                    height: 350
+                                })
+                            }, e[0]))
+                        })]
+                    })]
+                })]
+            })
+        }
+        function b(e) {
+            let {text: t, disabled: a, onClick: c} = e;
+            return (0,
+            n.jsxs)("div", {
+                className: "".concat(g.futuristicButton, " ").concat(a ? g.disabled : ""),
+                children: [(0,
+                n.jsxs)("div", {
+                    className: g.overlay,
+                    children: [(0,
+                    n.jsx)("div", {
+                        className: "".concat(g.overlayElement, " ").concat(g.topLeft)
+                    }), (0,
+                    n.jsx)("div", {
+                        className: "".concat(g.overlayElement, " ").concat(g.topRight)
+                    }), (0,
+                    n.jsx)("div", {
+                        className: "".concat(g.overlayElement, " ").concat(g.bottomLeft)
+                    }), (0,
+                    n.jsx)("div", {
+                        className: "".concat(g.overlayElement, " ").concat(g.bottomRight)
+                    }), (0,
+                    n.jsx)(h, {
+                        src: "/images/PNG/Button1.png",
+                        alt: "side",
+                        width: 900,
+                        height: 900
+                    })]
+                }), (0,
+                n.jsx)("button", {
+                    className: a ? g.disabled : "",
+                    disabled: a,
+                    onClick: c,
+                    children: t
+                })]
+            })
+        }
+        function w(e, t) {
+            return "/images/games/blackjack/".concat(t.hidden ? e : t.stringValue + "-" + t.suit, ".png")
+        }
+        function C(e, t) {
+            return t.filter(t=>void 0 === e.find(e=>e.stringValue === t.stringValue && e.suit === t.suit))
+        }
+        function N(e, t, a) {
+            let n = t ? e.newDealerDeck : e.newPlayerDeck;
+            return void 0 === n || void 0 !== n.find(e=>e.stringValue === a.stringValue && e.suit === a.suit)
+        }
+        function E(e, t, a) {
+            switch (e) {
+            case k.PLAYER:
+                return 21 === t && 2 == a ? "BLACKJACK" : "WON";
+            case k.DEALER:
+                return t > 21 ? "BUST" : "LOST";
+            case k.TIE:
+                return "PUSH";
+            case k.ERROR:
+            default:
+                return "Error"
+            }
+        }
+        function S(e, t, a) {
+            switch (e) {
+            case k.PLAYER:
+                return 21 === t && 2 == a ? "gold" : "green";
+            case k.DEALER:
+                return "red";
+            case k.TIE:
+                return "white";
+            case k.ERROR:
+            default:
+                return "red"
+            }
+        }
+        t.default = function() {
+            let[e,t] = (0,
+            r.useState)(y.DEFAULT)
+              , [a,l] = (0,
+            r.useState)(0)
+              , [i,o] = (0,
+            r.useState)(j.UNINITIALIZED)
+              , [d,h] = (0,
+            r.useState)(null)
+              , m = (0,
+            r.useRef)(null)
+              , p = (0,
+            s.Ty)();
+            return (0,
+            r.useEffect)(()=>{
+                let e = (0,
+                s.$o)("preferredCardStyle");
+                e && t(e);
+                let a = async()=>{
+                    if (null !== m.current || null === p)
+                        return;
+                    let e = await (0,
+                    c.w)("/api/games/blackjack", {
+                        action: "hasCurrentGame",
+                        account: p.account
+                    });
+                    m.current = !0,
+                    h(e.hasOnGoingGame)
+                }
+                ;
+                a()
+            }
+            , []),
+            (0,
+            n.jsxs)(n.Fragment, {
+                children: [(0,
+                n.jsx)(u, {
+                    children: (0,
+                    n.jsx)("title", {
+                        children: "Fortunes | Fortunes Blackjack"
+                    })
+                }), i === j.UNINITIALIZED && null === d ? (0,
+                n.jsx)(_.Z, {}) : !0 === d || i === j.INITIALIZED ? (0,
+                n.jsx)(x, {
+                    setGameState: o,
+                    setHasCurrentGame: h,
+                    betAmount: a,
+                    credentials: p,
+                    backStyle: e,
+                    setBackStyle: t
+                }) : (0,
+                n.jsx)(v, {
+                    setGameState: o,
+                    setBetAmount: l,
+                    credentials: p
+                })]
+            })
+        }
+    }
+}, function(e) {
+    e.O(0, [774, 888, 179], function() {
+        return e(e.s = 5424)
+    }),
+    _N_E = e.O()
+}
+]);
