@@ -1,177 +1,33 @@
 <html>
 <head>
   <title>XRP Blackjack</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <h1>XRP Blackjack</h1>
-  <p>Dealer: <span id="dealer-score"></span></p>
-  <p>Player: <span id="player-score"></span></p>
-  <p>
-    <button id="deal-button">Deal</button>
-    <button id="hit-button">Hit</button>
-    <button id="stand-button">Stand</button>
-  </p>
-  <div id="dealer-cards"></div>
-  <div id="player-cards"></div>
-  <script>
-    // define constants
-    const CARD_VALUES = {
-      'ACE': 11,
-      '2': 2,
-      '3': 3,
-      '4': 4,
-      '5': 5,
-      '6': 6,
-      '7': 7,
-      '8': 8,
-      '9': 9,
-      '10': 10,
-      'JACK': 10,
-      'QUEEN': 10,
-      'KING': 10,
-    };
-    const CARDS = ['ACE', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING'];
-    const STARTING_MONEY = 100;
-    const MIN_BET = 10;
-    const MAX_BET = 100;
-
-    // define variables
-    let deck = [];
-    let dealerHand = [];
-    let playerHand = [];
-    let dealerScore = 0;
-    let playerScore = 0;
-    let money = STARTING_MONEY;
-    let bet = 0;
-
-    // set up event listeners
-    document.getElementById('deal-button').addEventListener('click', deal);
-    document.getElementById('hit-button').addEventListener('click', hit);
-    document.getElementById('stand-button').addEventListener('click', stand);
-
-    // initialize game
-    shuffleDeck();
-    updateMoney();
-    updateBet();
-
-    // define functions
-    function shuffleDeck() {
-      deck = [];
-      for (let i = 0; i < 4; i++) {
-        deck = deck.concat(CARDS);
-      }
-      deck = shuffleArray(deck);
-    }
-
-    function shuffleArray(array) {
-      let currentIndex = array.length;
-      let temporaryValue;
-      let randomIndex;
-
-      while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-
-      return array;
-    }
-
-    function updateMoney() {
-      document.getElementById('money').innerHTML = `Money: ${money}`;
-    }
-
-    function updateBet() {
-      document.getElementById('bet').innerHTML = `Bet: ${bet}`;
-    }
-
-    function deal() {
-      // check if bet is within limits and player has enough money
-      if (bet < MIN_BET || bet > MAX_BET || bet > money) {
-        alert(`Please enter a bet between ${MIN_BET} and ${MAX_BET} and within your budget of ${money}.`);
-        return;
-      }
-
-      // reset scores and hands
-      dealerScore = 0;
-      playerScore = 0;
-      dealerHand = [];
-      playerHand = [];
-
-      // deal initial cards
-      dealerHand = [drawCard(), drawCard()];
-      playerHand = [drawCard(), drawCard()];
-
-<css>
-  /* General styles */
-body {
-  font-family: Arial, sans-serif;
-}
-
-/* Header styles */
-header {
-  background-color: #1abc9c;
-  color: white;
-  padding: 20px;
-}
-
-h1 {
-  margin: 0;
-}
-
-/* Navigation styles */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #16a085;
-  color: white;
-  padding: 10px;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-}
-
-nav li {
-  margin-left: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Main content styles */
-main {
-  padding: 20px;
-}
-
-h2 {
-  margin-top: 0;
-}
-
-p {
-  line-height: 1.5;
-}
-
-button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Footer styles */
-footer {
-  background-color: #1abc9c;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
+  <p id="money-display">Money: 100 XRP</p>
+  <p id="bet-display">Bet: 0 XRP</p>
+  <div id="dealer-section">
+    <h2>Dealer:</h2>
+    <div id="dealer-hand"></div>
+    <p id="dealer-score"></p>
+  </div>
+  <div id="player-section">
+    <h2>Player:</h2>
+    <div id="player-hand"></div>
+    <p id="player-score"></p>
+    <div id="player-buttons">
+      <button id="hit-button">Hit</button>
+      <button id="stand-button">Stand</button>
+      <button id="deal-button">Deal</button>
+    </div>
+    <form id="bet-form">
+      <label for="bet-input">Bet:</label>
+      <input type="number" id="bet-input" name="bet" min="10" max="100" step="10">
+      <button type="submit" id="bet-button">Place Bet</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
