@@ -103,6 +103,5 @@
       playerHand = [];
 
       // deal initial cards
-      dealerHand
-= [drawCard(), drawCard()];
-playerHand = [drawCard(), drawCard()];
+      dealerHand = [drawCard(), drawCard()];
+      playerHand = [drawCard(), drawCard()];
