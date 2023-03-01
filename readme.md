@@ -30,5 +30,6 @@
         <button id="stand-button" disabled>Stand</button>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
