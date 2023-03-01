@@ -8,6 +8,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+<script src="script.js" defer></script>
     <header>
       <h1>XRP Blackjack</h1>
       <div id="status">
