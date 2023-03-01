@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-<script src="script.js" defer></script>
+<script src="script.js"></script>
     <header>
       <h1>XRP Blackjack</h1>
       <div id="status">
