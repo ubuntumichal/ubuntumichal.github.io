@@ -105,125 +105,72 @@
       dealerHand = [drawCard(), drawCard()];
       playerHand = [drawCard(), drawCard()];
 
-  // update scores
-  updateScores();
-
-  // display cards
-  displayCards();
-
-  // check for blackjack
-  if (dealerScore === 21 || playerScore === 21) {
-    endGame();
-    return;
-  }
+  /* General styles */
+body {
+  font-family: Arial, sans-serif;
 }
 
-function hit() {
-  // draw a card and add it to the player's hand
-  playerHand.push(drawCard());
-
-  // update scores
-  updateScores();
-
-  // display cards
-  displayCards();
-
-  // check for bust
-  if (playerScore > 21) {
-    endGame();
-  }
+/* Header styles */
+header {
+  background-color: #1abc9c;
+  color: white;
+  padding: 20px;
 }
 
-function stand() {
-  // dealer draws until they reach a score of 17 or higher
-  while (dealerScore < 17) {
-    dealerHand.push(drawCard());
-    updateScores();
-    displayCards();
-  }
-
-  endGame();
+h1 {
+  margin: 0;
 }
 
-function drawCard() {
-  // remove a card from the deck and return it
-  return deck.pop();
+/* Navigation styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #16a085;
+  color: white;
+  padding: 10px;
 }
 
-function updateScores() {
-  // reset scores
-  dealerScore = 0;
-  playerScore = 0;
-
-  // calculate scores
-  for (let card of dealerHand) {
-    dealerScore += CARD_VALUES[card];
-  }
-  for (let card of playerHand) {
-    playerScore += CARD_VALUES[card];
-  }
-
-  // adjust for aces
-  if (dealerHand.includes('ACE') && dealerScore > 21) {
-    dealerScore -= 10;
-  }
-  if (playerHand.includes('ACE') && playerScore > 21) {
-    playerScore -= 10;
-  }
-
-  // update score display
-  document.getElementById('dealer-score').innerHTML = dealerScore;
-  document.getElementById('player-score').innerHTML = playerScore;
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
 }
 
-function displayCards() {
-  // display dealer's cards
-  let dealerCards = '';
-  for (let i = 0; i < dealerHand.length; i++) {
-    dealerCards += `<img src="cards/${dealerHand[i]}.png" alt="${dealerHand[i]}" />`;
-  }
-  document.getElementById('dealer-cards').innerHTML = dealerCards;
-
-  // display player's cards
-  let playerCards = '';
-  for (let i = 0; i < playerHand.length; i++) {
-    playerCards += `<img src="cards/${playerHand[i]}.png" alt="${playerHand[i]}" />`;
-  }
-  document.getElementById('player-cards').innerHTML = playerCards;
+nav li {
+  margin-left: 20px;
 }
 
-function endGame() {
-  // determine winner and adjust money
-  let winner;
-  if (playerScore > 21 || (dealerScore <= 21 && dealerScore > playerScore)) {
-    winner = 'dealer';
-    money -= bet;
-  } else if (dealerScore > 21 || playerScore > dealerScore) {
-    winner = 'player';
-    money += bet;
-  } else {
-    winner = 'tie';
-  }
+nav a {
+  color: white;
+  text-decoration: none;
+}
 
-  // display winner and update money
-  let message = `Dealer: ${dealerScore}, Player: ${playerScore}. `;
-  if (winner === 'dealer') {
-    message += 'Dealer wins.';
-  } else if (winner === 'player') {
-    message += 'Player wins!';
-  } else {
-    message += 'It\'s a tie!';
-  }
-  alert(message);
-  updateMoney();
+/* Main content styles */
+main {
+  padding: 20px;
+}
 
-  // check if game is over
-  if (money <= 0) {
-    alert('Game over! You\'re out of money.');
-    location.reload();
-  } else {
-    // reset bet and deal new hand
-    bet = 0;
-    updateBet();
-    deal();
+h2 {
+  margin-top: 0;
+}
 
+p {
+  line-height: 1.5;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+  background-color: #1abc9c;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
