@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="my-script.js"></script>
+<script src="script.js"></script>
   <h1>XRP Blackjack</h1>
   <p id="money-display">Money: 100 XRP</p>
   <p id="bet-display">Bet: 0 XRP</p>
