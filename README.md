@@ -2,7 +2,6 @@
 <head>
   <title>XRP Blackjack</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
  <script>
     // define constants
 const CARD_VALUES = {
@@ -233,6 +232,5 @@ document.getElementById('player-cards').innerHTML = playerCards;
       <button type="submit" id="bet-button">Place Bet</button>
     </form>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
