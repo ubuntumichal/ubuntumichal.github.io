@@ -86,13 +86,6 @@ function showCards(player) {
   }
 }
 
-// Function to disable player actions (hit, stand, double down)
-function disableActions() {
-  document.getElementById('hit-button').disabled = true;
-  document.getElementById('stand-button').disabled = true;
-  document.getElementById('double-down-button').disabled = true;
-}
-
 // Function to enable player actions (hit, stand, double down)
 function enableActions() {
   document.getElementById('hit-button').disabled = false;
