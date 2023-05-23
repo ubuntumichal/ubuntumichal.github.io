@@ -91,6 +91,8 @@ function startGame() {
   dealCard('player');
   dealCard('dealer');
   updateUI();
+  document.getElementById('hit-button').disabled = false;
+  document.getElementById('stand-button').disabled = false;
 }
 
 // Function to update the UI with player and dealer cards
