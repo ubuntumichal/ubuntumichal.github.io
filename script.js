@@ -1,4 +1,4 @@
-<script>
+  <script>
     // JavaScript code for the game
 
     // Define variables and arrays for cards, scores, and other game-related data
@@ -84,11 +84,6 @@ function showCards(player) {
     cardElement.textContent = card;
     cardsElement.appendChild(cardElement);
   }
-}
-
-// Function to enable player actions (hit, stand, double down)
-function enableActions() {
-  document.getElementById('hit-button').disabled = false;
 }
 
 // Event listener for the hit button
