@@ -1,91 +1,134 @@
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 20px;
+/* Card design */
+.card {
+  position: relative;
+  width: 90px;
+  height: 140px;
+  color: #333333;
+  font-size: 14px;
   text-align: center;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+.card::before {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-h1 {
-  color: #333333;
+.card::after {
+  background-color: #000000;
+  z-index: 1;
+  transform: rotate(180deg);
 }
 
-button {
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px;
+.card::before,
+.card::after {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-/* Game board styles */
-#game-board {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#dealer-cards,
-#player-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.card {
-  background-color: #ffffff;
-  border: 1px solid #333333;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 0 5px;
+.card .top-suit,
+.card .bottom-suit {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 14px;
   font-weight: bold;
 }
 
-#dealer-score,
-#player-score {
-  font-size: 18px;
-  margin-bottom: 10px;
+.card .suit-icon {
+  font-size: 24px;
 }
 
-#result {
+.card .middle-suit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .rank {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 24px;
   font-weight: bold;
-  margin-top: 20px;
-  display: none;
 }
 
-#buttons {
-  display: flex;
-  justify-content: center;
+.card .rank span {
+  display: block;
+  margin-top: -5px;
 }
 
-#hit-button:disabled,
-#stand-button:disabled,
-#restart-button:disabled {
-  background-color: #cccccc;
-  color: #666666;
-  cursor: not-allowed;
+.card .corner-rank {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-#restart-button {
-  margin-top: 20px;
-  background-color: #ff4b4b;
-  color: #ffffff;
+.card .corner-suit {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card.red {
+  color: #ff0000;
+}
+
+.card.red::before {
+  background-color: #ffdddd;
+}
+
+.card.red::after {
+  background-color: #cc0000;
+}
+
+.card.black {
+  color: #000000;
+}
+
+.card.black::before {
+  background-color: #dddddd;
+}
+
+.card.black::after {
+  background-color: #000000;
+}
+
+.card .icon {
+  position: absolute;
+  font-size: 48px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .icon-heart {
+  color: red;
+}
+
+.card .icon-spade {
+  color: black;
+}
+
+.card .icon-diamond {
+  color: red;
+}
+
+.card .icon-club {
+  color: black;
 }
