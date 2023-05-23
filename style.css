@@ -1,29 +1,32 @@
+/* CSS styling for the game */
 body {
-  background-color: #f2f2f2;
+  background-color: #f5f5f5;
   font-family: Arial, sans-serif;
-}
-
-#game-container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
   color: #333;
 }
 
-h2 {
-  color: #666;
+h1 {
+  text-align: center;
+  color: #ff4500;
 }
 
-#dealer-container,
-#player-container {
-  margin-bottom: 20px;
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#dealer-hand,
+#player-hand {
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+h3 {
+  color: #000080;
 }
 
 #dealer-cards,
@@ -31,38 +34,48 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 #dealer-cards div,
 #player-cards div {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #ffe4b5;
+  color: #000;
   padding: 10px;
   margin: 5px;
+  border-radius: 5px;
 }
 
-#button-container {
-  margin-top: 20px;
+#dealer-score,
+#player-score {
+  text-align: center;
+  font-weight: bold;
 }
 
-button {
-  background-color: #333;
+#hit-button,
+#stand-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
   color: #fff;
+  background-color: #ff4500;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  margin: 5px;
   cursor: pointer;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+#hit-button:hover,
+#stand-button:hover {
+  background-color: #ff6347;
 }
 
-#message {
-  font-weight: bold;
-  color: #ff0000;
+#hit-button:disabled,
+#stand-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
 }
