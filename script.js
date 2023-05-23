@@ -118,8 +118,10 @@ function updateUI() {
 }
 
 // Event listener for the start button
-document.getElementById('start-button').addEventListener('click', function() {
-  startGame();
-  updateUI();
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('start-button').addEventListener('click', function() {
+    startGame();
+    updateUI();
+  });
 });
 </script>
