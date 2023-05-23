@@ -83,21 +83,22 @@ function startGame() {
   console.log('Dealer cards:', dealerCards);
 }
 
-// Start the game
-startGame();
-dealCard('dealer');
-dealCard('dealer');
-dealCard('player');
-dealCard('player');
-console.log('Player cards:', playerCards);
-console.log('Dealer cards:', dealerCards);
+// Function to start the game
+function startGame() {
+  deck = createDeck();
+  dealCard('player');
+  dealCard('player');
+  dealCard('dealer');
+  console.log('Player cards:', playerCards);
+  console.log('Dealer cards:', dealerCards);
+  updateUI();
 }
 
 // Function to update the UI with player and dealer cards
 function updateUI() {
   const dealerCardsElement = document.getElementById('dealer-cards');
   const playerCardsElement = document.getElementById('player-cards');
-  
+
   dealerCardsElement.innerHTML = '';
   playerCardsElement.innerHTML = '';
 
@@ -119,9 +120,9 @@ function updateUI() {
 
 // Event listener for the start button
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('start-button').addEventListener('click', function() {
+  const startButton = document.getElementById('start-button');
+  startButton.onclick = function() {
     startGame();
-    updateUI();
-  });
+  };
 });
 </script>
