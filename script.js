@@ -103,3 +103,55 @@ function updateUI() {
 
 // Event listener for the start game button
 document.getElementById('start-button').addEventListener('click', startGame);
+
+// Function to check if the player or dealer has blackjack (score of 21)
+function checkBlackjack() {
+  if (playerScore === 21) {
+    endGame('Player has blackjack! You win!');
+  } else if (dealerScore === 21) {
+    endGame('Dealer has blackjack! You lose!');
+  }
+}
+
+// Function to check if the player or dealer has busted (score over 21)
+function checkBust() {
+  if (playerScore > 21) {
+    endGame('Player busts! You lose!');
+  } else if (dealerScore > 21) {
+    endGame('Dealer busts! You win!');
+  }
+}
+
+// Function to compare the final scores and determine the winner
+function compareScores() {
+  if (playerScore > dealerScore) {
+    endGame('You win!');
+  } else if (playerScore < dealerScore) {
+    endGame('You lose!');
+  } else {
+    endGame('It\'s a tie!');
+  }
+}
+
+// Function to end the game and display the result
+function endGame(message) {
+  document.getElementById('hit-button').disabled = true;
+  document.getElementById('stand-button').disabled = true;
+  document.getElementById('message').textContent = message;
+}
+
+// Event listener for the hit button
+document.getElementById('hit-button').addEventListener('click', function() {
+  dealCard('player');
+  checkBlackjack();
+  checkBust();
+});
+
+// Event listener for the stand button
+document.getElementById('stand-button').addEventListener('click', function() {
+  while (dealerScore < 17) {
+    dealCard('dealer');
+  }
+  compareScores();
+});
+
