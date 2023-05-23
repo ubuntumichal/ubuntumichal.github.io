@@ -89,4 +89,37 @@ dealCard('dealer');
 dealCard('dealer');
 dealCard('player');
 dealCard('player');
+console.log('Player cards:', playerCards);
+console.log('Dealer cards:', dealerCards);
+}
+
+// Function to update the UI with player and dealer cards
+function updateUI() {
+  const dealerCardsElement = document.getElementById('dealer-cards');
+  const playerCardsElement = document.getElementById('player-cards');
+  
+  dealerCardsElement.innerHTML = '';
+  playerCardsElement.innerHTML = '';
+
+  dealerCards.forEach(card => {
+    const cardElement = document.createElement('div');
+    cardElement.textContent = card;
+    dealerCardsElement.appendChild(cardElement);
+  });
+
+  playerCards.forEach(card => {
+    const cardElement = document.createElement('div');
+    cardElement.textContent = card;
+    playerCardsElement.appendChild(cardElement);
+  });
+
+  document.getElementById('dealer-score').textContent = `Score: ${dealerScore}`;
+  document.getElementById('player-score').textContent = `Score: ${playerScore}`;
+}
+
+// Event listener for the start button
+document.getElementById('start-button').addEventListener('click', function() {
+  startGame();
+  updateUI();
+});
 </script>
