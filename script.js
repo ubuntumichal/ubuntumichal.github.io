@@ -157,3 +157,58 @@ document.getElementById('stand-button').addEventListener('click', function() {
   compareScores();
 });
 
+// Define a variable to track the game state
+let gameOver = false;
+
+// Function to end the game and determine the winner
+function endGame() {
+  gameOver = true;
+  document.getElementById('hit-button').disabled = true;
+  document.getElementById('stand-button').disabled = true;
+
+  while (dealerScore < 17) {
+    dealCard('dealer');
+  }
+
+  if (dealerScore > 21 || playerScore > dealerScore) {
+    displayResult('You win!');
+  } else if (dealerScore > playerScore) {
+    displayResult('Dealer wins!');
+  } else {
+    displayResult('It\'s a tie!');
+  }
+}
+
+// Function to display the game result
+function displayResult(result) {
+  const resultElement = document.getElementById('result');
+  resultElement.textContent = result;
+  resultElement.style.display = 'block';
+}
+
+// Function to restart the game
+function restartGame() {
+  // Reset game-related variables and arrays
+  deck = [];
+  dealerCards = [];
+  playerCards = [];
+  dealerScore = 0;
+  playerScore = 0;
+  gameOver = false;
+
+  // Reset UI elements
+  document.getElementById('dealer-cards').innerHTML = '';
+  document.getElementById('player-cards').innerHTML = '';
+  document.getElementById('dealer-score').textContent = 'Score: ';
+  document.getElementById('player-score').textContent = 'Score: ';
+  document.getElementById('result').style.display = 'none';
+
+  // Enable buttons and start a new game
+  document.getElementById('hit-button').disabled = false;
+  document.getElementById('stand-button').disabled = false;
+  startGame();
+}
+
+// Event listener for the restart button
+document.getElementById('restart-button').addEventListener('click', restartGame);
+
