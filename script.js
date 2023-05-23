@@ -29,10 +29,12 @@ function dealCard(player) {
   const card = getRandomCard();
   if (player === 'dealer') {
     dealerCards.push(card);
-    dealerScore = calculateScore(dealerCards);
+    updateScore('dealer');
+    showCards('dealer');
   } else if (player === 'player') {
     playerCards.push(card);
-    playerScore = calculateScore(playerCards);
+    updateScore('player');
+    showCards('player');
   }
 }
 
@@ -57,19 +59,28 @@ function calculateScore(cards) {
   return score;
 }
 
-// Function to check if the game is over
-function isGameOver() {
-  return playerScore > 21 || dealerScore > 21;
+// Function to update the score of a player
+function updateScore(player) {
+  if (player === 'dealer') {
+    dealerScore = calculateScore(dealerCards);
+    document.getElementById('dealer-score').textContent = `Score: ${dealerScore}`;
+  } else if (player === 'player') {
+    playerScore = calculateScore(playerCards);
+    document.getElementById('player-score').textContent = `Score: ${playerScore}`;
+  }
 }
 
-// Function to determine the winner
-function getWinner() {
-  if (playerScore === dealerScore) {
-    return "It's a tie!";
-  } else if (playerScore > dealerScore) {
-    return "You win!";
-  } else {
-    return "Dealer wins!";
+// Function to show the cards of a player
+function showCards(player) {
+  const cardsContainer = player === 'dealer' ? 'dealer-cards' : 'player-cards';
+  const cards = player === 'dealer' ? dealerCards : playerCards;
+  const cardsElement = document.getElementById(cardsContainer);
+  cardsElement.innerHTML = ''; // Clear the existing cards
+
+  for (let card of cards) {
+    const cardElement = document.createElement('div');
+    cardElement.textContent = card;
+    cardsElement.appendChild(cardElement);
   }
 }
 
@@ -79,49 +90,16 @@ function startGame() {
   dealCard('player');
   dealCard('player');
   dealCard('dealer');
-  console.log('Player cards:', playerCards);
-  console.log('Dealer cards:', dealerCards);
-}
-
-// Function to start the game
-function startGame() {
-  deck = createDeck();
-  dealCard('player');
-  dealCard('player');
-  dealCard('dealer');
-  console.log('Player cards:', playerCards);
-  console.log('Dealer cards:', dealerCards);
   updateUI();
 }
 
 // Function to update the UI with player and dealer cards
 function updateUI() {
-  const dealerCardsElement = document.getElementById('dealer-cards');
-  const playerCardsElement = document.getElementById('player-cards');
-
-  dealerCardsElement.innerHTML = '';
-  playerCardsElement.innerHTML = '';
-
-  dealerCards.forEach(card => {
-    const cardElement = document.createElement('div');
-    cardElement.textContent = card;
-    dealerCardsElement.appendChild(cardElement);
-  });
-
-  playerCards.forEach(card => {
-    const cardElement = document.createElement('div');
-    cardElement.textContent = card;
-    playerCardsElement.appendChild(cardElement);
-  });
-
+  showCards('dealer');
+  showCards('player');
   document.getElementById('dealer-score').textContent = `Score: ${dealerScore}`;
   document.getElementById('player-score').textContent = `Score: ${playerScore}`;
 }
 
-// Event listener for the start button
-document.addEventListener('DOMContentLoaded', function() {
-  const startButton = document.getElementById('start-button');
-  startButton.onclick = function() {
-    startGame();
-  };
-});
+// Event listener for the start game button
+document.getElementById('start-button').addEventListener('click', startGame);
