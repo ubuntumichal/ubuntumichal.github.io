@@ -6,16 +6,27 @@
     opacity: 0.5;
     z-index: 9999;
     cursor: pointer;
-    /* Adjust the positioning as needed */
-    left: 20px;
-    top: 20px;
 }
 
-/* Style for the container of trigger and logo */
-.trigger-and-logo {
+/* Style for the container of trigger and logo on the left */
+.trigger-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Style for the container of the logo */
+.logo-container {
     position: relative;
-    display: flex;
-    align-items: center;
+    display: inline-block;
+}
+
+/* Style for the container of the card game section */
+.card-game-container {
+    flex: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
 }
 
 body {
