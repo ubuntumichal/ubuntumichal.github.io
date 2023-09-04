@@ -10,13 +10,25 @@ hiddenTrigger2.addEventListener("click", revealCardGame);
 function revealCardGame() {
     document.getElementById("cardGame").style.display = "flex";
 }
-
-// Array of Joker card image filenames
+// Array of all 17 Joker card image filenames
 const jokerCards = [
     "joker-card-1.jpg",
     "joker-card-2.jpg",
-    // Add all your Joker card image filenames here
-    // Ensure you have the appropriate number of images
+    "joker-card-3.jpg",
+    "joker-card-4.jpg",
+    "joker-card-5.jpg",
+    "joker-card-6.jpg",
+    "joker-card-7.jpg",
+    "joker-card-8.jpg",
+    "joker-card-9.jpg",
+    "joker-card-10.jpg",
+    "joker-card-11.jpg",
+    "joker-card-12.jpg",
+    "joker-card-13.jpg",
+    "joker-card-14.jpg",
+    "joker-card-15.jpg",
+    "joker-card-16.jpg",
+    "joker-card-17.jpg"
 ];
 
 // Function to randomly select a Joker card image
