@@ -24,7 +24,7 @@ function drawJokerCard() {
     const randomIndex = Math.floor(Math.random() * jokerCards.length);
     const selectedCard = jokerCards[randomIndex];
     // Update the card image source
-    document.getElementById("cardImage").src = "joker-card-1.jpg";
+    document.getElementById("cardImage").src = selectedCard;
 }
 
 // Add an event listener to the trigger button
@@ -33,6 +33,8 @@ document.getElementById("hiddenTrigger").addEventListener("click", revealCardGam
 // Function to reveal the card game section
 function revealCardGame() {
     document.getElementById("cardGame").style.display = "flex";
+    // Initialize the card image with the first Joker card
+    document.getElementById("cardImage").src = "joker-card-1.jpg";
 }
 
 // Add an event listener to the draw button
