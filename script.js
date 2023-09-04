@@ -1,15 +1,3 @@
-// Get the hidden trigger image elements
-const hiddenTrigger = document.getElementById("hiddenTrigger");
-const hiddenTrigger2 = document.getElementById("hiddenTrigger2");
-
-// Add a click event listener to both hidden triggers
-hiddenTrigger.addEventListener("click", revealCardGame);
-hiddenTrigger2.addEventListener("click", revealCardGame);
-
-// Function to reveal the card game section
-function revealCardGame() {
-    document.getElementById("cardGame").style.display = "flex";
-}
 // Array of all 17 Joker card image filenames
 const jokerCards = [
     "joker-card-1.jpg",
