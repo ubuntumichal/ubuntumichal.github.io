@@ -1,95 +1,22 @@
-/* Card design */
-.card-container {
-  position: relative;
-  width: 100px;
-  height: 160px;
-  margin: 10px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Clowns NFTs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <img src="your-image.jpg" alt="Crypto Clowns Logo" class="logo">
+        <h1>Clowns on the Block</h1>
+        <p>Minting Soon</p>
+        <div class="links">
+            <a href="https://twitter.com/CryptoClowns" target="_blank">Twitter</a>
+            <a href="https://discord.gg/CryptoClowns" target="_blank">Discord</a>
+            <a href="https://your-nft-marketplace.com" target="_blank">NFT Marketplace</a>
+        </div>
+    </div>
+</body>
+</html>
 
-.card {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  border: 1px solid #333333;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  box-sizing: border-box;
-  color: #333333;
-  font-size: 14px;
-  text-align: center;
-}
-
-.card .top-suit,
-.card .bottom-suit {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.card .suit-icon {
-  font-size: 24px;
-}
-
-.card .middle-suit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card .rank {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.card .rank span {
-  display: block;
-  margin-top: -5px;
-}
-
-.card .corner-rank {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.card .corner-suit {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.card.red {
-  color: #ff0000;
-  border-color: #ff0000;
-}
-
-.card.black {
-  color: #000000;
-  border-color: #000000;
-}
-
-.card .icon {
-  font-size: 48px;
-}
-
-.card .icon-heart {
-  color: red;
-}
-
-.card .icon-spade {
-  color: black;
-}
-
-.card .icon-diamond {
-  color: red;
-}
-
-.card .icon-club {
-  color: black;
-}
