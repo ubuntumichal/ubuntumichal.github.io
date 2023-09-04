@@ -1,3 +1,15 @@
+/* Hidden trigger image style */
+.hidden-trigger {
+    width: 10px; /* Set an initial width */
+    height: 10px; /* Set an initial height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 9999; /* Ensure it's above other elements */
+    cursor: pointer;
+}
+
 body {
     background-color: black;
     margin: 0;
@@ -31,21 +43,6 @@ p {
     margin: 0 20px;
     font-size: 18px;
 }
-
-
-/* Hidden trigger image style */
-.hidden-trigger {
-    width: 1px; /* Adjust the size as needed */
-    height: 1px; /* Adjust the size as needed */
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 9999; /* Ensure it's above other elements */
-    cursor: pointer;
-}
-
-/* Rest of your CSS styles */
 
 /* Card Game Styles */
 
