@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Clowns NFTs</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="content">
-        <img src="your-image.jpg" alt="Crypto Clowns Logo" class="logo">
-        <h1>Clowns on the Block</h1>
-        <p>Minting Soon</p>
-        <div class="links">
-            <a href="https://twitter.com/CryptoClowns" target="_blank">Twitter</a>
-            <a href="https://discord.gg/CryptoClowns" target="_blank">Discord</a>
-            <a href="https://your-nft-marketplace.com" target="_blank">NFT Marketplace</a>
-        </div>
-    </div>
-</body>
-</html>
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
+.content {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+}
