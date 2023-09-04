@@ -17,34 +17,28 @@ body {
     height: auto;
 }
 
-/* Increase the font size for "Minting Soon" */
 p {
-    font-size: 30px; /* Adjust the size as needed */
+    font-size: 18px;
 }
 
 .links {
     margin-top: 20px;
 }
 
-/* Make the links white */
 .links a {
-    color: white; /* Set the color to white */
+    color: white;
     text-decoration: none;
     margin: 0 20px;
     font-size: 18px;
 }
 
-/* Existing Styles for the Website */
-
-/* Add your existing styles here */
-
-/* Styles for the Card Game Section */
+/* Card Game Styles */
 
 #cardGame {
     display: none;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-top: 20px;
 }
 
 #card img {
@@ -55,19 +49,18 @@ p {
 #drawButton {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: blue; /* Match the background color of your website */
-    color: white; /* Match the text color of your website */
+    background-color: blue;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px; /* Adjust the margin as needed */
+    margin-top: 10px;
 }
 
 #drawButton:hover {
-    background-color: darkblue; /* Match the hover background color of your website */
+    background-color: darkblue;
 }
 
 .hidden {
     display: none;
 }
-
