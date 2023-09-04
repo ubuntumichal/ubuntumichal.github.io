@@ -1,3 +1,18 @@
+// Get the hidden trigger image element
+const hiddenTrigger = document.getElementById("hiddenTrigger");
+
+// Add a mousemove event listener to dynamically change the size
+document.addEventListener("mousemove", (event) => {
+    // Get the mouse position
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    // Set the width and height of the hidden trigger image based on the mouse position
+    hiddenTrigger.style.width = mouseX + "px";
+    hiddenTrigger.style.height = mouseY + "px";
+});
+
+
 // Array of Joker card image filenames
 const jokerCards = [
     "joker-card-1.jpg",
