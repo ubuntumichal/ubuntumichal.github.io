@@ -27,10 +27,16 @@ function drawJokerCard() {
     document.getElementById("cardImage").src = selectedCard;
 }
 
+// Add an event listener to the trigger button
+document.getElementById("hiddenTrigger").addEventListener("click", revealCardGame);
+
+// Function to reveal the card game section
+function revealCardGame() {
+    document.getElementById("cardGame").style.display = "flex";
+}
+
 // Add an event listener to the draw button
 document.getElementById("drawButton").addEventListener("click", drawJokerCard);
 
-// Function to reveal the card game section
-document.getElementById("startButton").addEventListener("click", () => {
-    document.getElementById("cardGame").style.display = "flex";
-});
+// Function to start the game
+document.getElementById("startButton").addEventListener("click", revealCardGame);
