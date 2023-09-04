@@ -26,9 +26,9 @@ p {
     margin-top: 20px;
 }
 
-/* Make the links blue */
+/* Make the links white */
 .links a {
-    color: blue; /* Change the color to blue */
+    color: white; /* Set the color to white */
     text-decoration: none;
     margin: 0 20px;
     font-size: 18px;
