@@ -17,6 +17,11 @@ body {
     height: auto;
 }
 
+/* Increase the font size for "Minting Soon" */
+p {
+    font-size: 24px; /* Adjust the size as needed */
+}
+
 .links {
     margin-top: 20px;
 }
