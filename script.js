@@ -24,7 +24,7 @@ function drawJokerCard() {
     const randomIndex = Math.floor(Math.random() * jokerCards.length);
     const selectedCard = jokerCards[randomIndex];
     // Update the card image source
-    document.getElementById("cardImage").src = selectedCard;
+    document.getElementById("cardImage").src = "joker-card-1.jpg";
 }
 
 // Add an event listener to the trigger button
