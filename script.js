@@ -27,8 +27,9 @@ function drawJokerCard() {
     document.getElementById("cardImage").src = selectedCard;
 }
 
-// Add an event listener to the trigger button
-document.getElementById("hiddenTrigger").addEventListener("click", revealCardGame);
+// Add event listeners to the trigger buttons
+document.getElementById("hiddenTriggerLeft").addEventListener("click", revealCardGame);
+document.getElementById("hiddenTriggerRight").addEventListener("click", revealCardGame);
 
 // Function to reveal the card game section
 function revealCardGame() {
