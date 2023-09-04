@@ -21,7 +21,7 @@
 }
 
 /* Style for the container of the card game section */
-.card-game-container {
+.right-content {
     flex: 1;
     text-align: center;
     color: white;
