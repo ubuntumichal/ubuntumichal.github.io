@@ -1,9 +1,9 @@
 /* Hidden trigger image style */
 .hidden-trigger {
-    width: 20px; /* Set the size of the hidden triggers */
-    height: 20px; /* Set the size of the hidden triggers */
+    width: 20px;
+    height: 20px;
     position: absolute;
-    opacity: 0.5; /* Adjust the opacity for visibility */
+    opacity: 0.5;
     z-index: 9999;
     cursor: pointer;
 }
