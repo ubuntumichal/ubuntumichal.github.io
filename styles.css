@@ -20,12 +20,13 @@
     display: inline-block;
 }
 
-/* Style for the container of the card game section */
+/* Style for the right content */
 .right-content {
     flex: 1;
     text-align: center;
     color: white;
     padding: 20px;
+    margin-left: 20px; /* Add margin to create separation */
 }
 
 /* Ensure the background color is black */
@@ -48,6 +49,10 @@ body {
     height: auto;
 }
 
+h1 {
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
 p {
     font-size: 18px;
 }
@@ -59,8 +64,6 @@ p {
 .links a {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
 }
 
 /* Card Game Styles */
