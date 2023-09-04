@@ -15,6 +15,7 @@
 
 /* Style for the container of the logo */
 .logo-container {
+    text-align: center; /* Center the logo horizontally */
     position: relative;
     display: inline-block;
 }
@@ -25,6 +26,41 @@
     text-align: center;
     color: white;
     padding: 20px;
+}
+
+/* Ensure the background color is black */
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 18px;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 /* Card Game Styles */
