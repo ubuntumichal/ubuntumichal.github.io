@@ -1,12 +1,10 @@
 /* Hidden trigger image style */
 .hidden-trigger {
-    width: 10px; /* Set an initial width */
-    height: 10px; /* Set an initial height */
+    width: 20px; /* Set the size of the hidden triggers */
+    height: 20px; /* Set the size of the hidden triggers */
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 9999; /* Ensure it's above other elements */
+    opacity: 0.5; /* Adjust the opacity for visibility */
+    z-index: 9999;
     cursor: pointer;
 }
 
