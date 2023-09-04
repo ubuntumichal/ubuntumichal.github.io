@@ -1,3 +1,8 @@
+/* Apply the custom "Handjet-Light" font to text elements */
+body {
+    font-family: 'Handjet-Light', sans-serif;
+}
+
 /* Hidden trigger image style */
 .hidden-trigger {
     width: 20px;
