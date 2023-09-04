@@ -1,16 +1,15 @@
-// Get the hidden trigger image element
+// Get the hidden trigger image elements
 const hiddenTrigger = document.getElementById("hiddenTrigger");
+const hiddenTrigger2 = document.getElementById("hiddenTrigger2");
 
-// Add a mousemove event listener to dynamically change the size
-document.addEventListener("mousemove", (event) => {
-    // Get the mouse position
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+// Add a click event listener to both hidden triggers
+hiddenTrigger.addEventListener("click", revealCardGame);
+hiddenTrigger2.addEventListener("click", revealCardGame);
 
-    // Set the width and height of the hidden trigger image based on the mouse position
-    hiddenTrigger.style.width = mouseX + "px";
-    hiddenTrigger.style.height = mouseY + "px";
-});
+// Function to reveal the card game section
+function revealCardGame() {
+    document.getElementById("cardGame").style.display = "flex";
+}
 
 // Array of Joker card image filenames
 const jokerCards = [
