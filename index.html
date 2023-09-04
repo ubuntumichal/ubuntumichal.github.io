@@ -8,25 +8,30 @@
 </head>
 <body>
     <div class="content">
-        <!-- Trigger image to the left of the logo -->
-        <div class="trigger-and-logo">
-            <img src="hidden-trigger.jpg" id="hiddenTrigger" class="hidden-trigger">
+        <!-- Trigger images on both sides of the logo -->
+        <div class="trigger-left">
+            <img src="hidden-trigger.jpg" id="hiddenTriggerLeft" class="hidden-trigger">
+        </div>
+        <div class="logo-container">
             <img src="King.jpg" alt="Crypto Clowns Logo" class="logo">
         </div>
-        <h1>Clowns on the Block</h1>
-        <p>Minting Soon</p>
-        <div class="links">
-            <a href="https://twitter.com/Clownontheblock" target="_blank">Twitter</a>
-            <a href="https://discord.gg/Ra5AfYrjE2" target="_blank">Discord</a>
-            <a href="https://xrp.cafe/collection/crypto-clowns" target="_blank">On xrp.cafe</a>
-        </div>
-        <!-- Card Game Section -->
-        <div id="cardGame" class="hidden">
-            <div id="card">
-                <img id="cardImage" alt="Joker Card">
+        <!-- Move the card game section to the right of the logo, separated -->
+        <div class="card-game-container">
+            <h1>Clowns on the Block</h1>
+            <p>Minting Soon</p>
+            <div class="links">
+                <a href="https://twitter.com/Clownontheblock" target="_blank">Twitter</a>
+                <a href="https://discord.gg/Ra5AfYrjE2" target="_blank">Discord</a>
+                <a href="https://xrp.cafe/collection/crypto-clowns" target="_blank">On xrp.cafe</a>
             </div>
-            <button id="startButton" class="hidden">Start Game</button>
-            <button id="drawButton">Draw Card</button>
+            <!-- Card Game Section -->
+            <div id="cardGame" class="hidden">
+                <div id="card">
+                    <img id="cardImage" alt="Joker Card">
+                </div>
+                <button id="startButton" class="hidden">Start Game</button>
+                <button id="drawButton">Draw Card</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
