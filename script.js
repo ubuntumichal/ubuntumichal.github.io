@@ -25,6 +25,12 @@ function revealCardGame() {
     cardGame.style.display = "block";
 }
 
+// Function to set the default card image
+function setDefaultCardImage() {
+    const cardImage = document.getElementById("cardImage");
+    cardImage.src = "joker-card-1.jpg"; // Set the default image to joker-card-1.jpg
+}
+
 // Function to draw a random Joker card
 function drawCard() {
     const cardImage = document.getElementById("cardImage");
@@ -47,7 +53,10 @@ function drawCard() {
 }
 
 // Add event listener to reveal the card game section
-document.getElementById("triggerLeft").addEventListener("click", revealCardGame);
+document.getElementById("hiddenTriggerLeft").addEventListener("click", revealCardGame);
 
 // Add event listener to draw a card
 document.getElementById("drawButton").addEventListener("click", drawCard);
+
+// Set the default card image when the game is revealed
+setDefaultCardImage();
