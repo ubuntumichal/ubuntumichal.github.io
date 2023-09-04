@@ -33,8 +33,8 @@ document.getElementById("hiddenTrigger").addEventListener("click", revealCardGam
 // Function to reveal the card game section
 function revealCardGame() {
     document.getElementById("cardGame").style.display = "flex";
-    // Initialize the card image with the first Joker card
-    document.getElementById("cardImage").src = "joker-card-1.jpg";
+    // Initialize the card image with a default image (you can replace "default-card.jpg" with your actual card image)
+    document.getElementById("cardImage").src = "default-card.jpg";
 }
 
 // Add an event listener to the draw button
