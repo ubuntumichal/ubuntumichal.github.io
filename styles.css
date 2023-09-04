@@ -6,8 +6,8 @@
     cursor: pointer;
 }
 
-/* Style for the container of trigger and logo on the left */
-.trigger-left {
+/* Style for the container of the left trigger */
+.left-trigger-container {
     position: absolute;
     top: 20px;
     left: 20px;
