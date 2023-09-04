@@ -6,6 +6,16 @@
     opacity: 0.5;
     z-index: 9999;
     cursor: pointer;
+    /* Adjust the positioning as needed */
+    left: 20px;
+    top: 20px;
+}
+
+/* Style for the container of trigger and logo */
+.trigger-and-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 body {
@@ -43,7 +53,6 @@ p {
 }
 
 /* Card Game Styles */
-
 #cardGame {
     display: none;
     flex-direction: column;
